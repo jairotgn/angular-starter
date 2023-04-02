@@ -1,1 +1,21 @@
-<p>register works!</p>
+
+<div class="mainbg min-vh-100">
+  <div class="container pt-5 d-flex justify-content-center">
+    <form #formRegister="ngForm" class="bg-white p-4 formlogin" (ngSubmit)="onSubmit(formRegister)" novalidate>
+      <h1 class="mb-5">Register page</h1>
+      <div class="mb-3">
+        <label for="email" class="form-label">Name</label>
+        <input ngModel type="text" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input ngModel type="email" name="email" class="form-control" required email>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input ngModel type="password" name="password" class="form-control" required pattern=".{3,}">
+      </div>
+      <input type="submit" class="btn btn-primary w-100" value="REGISTER">
+    </form>
+  </div>
+</div>

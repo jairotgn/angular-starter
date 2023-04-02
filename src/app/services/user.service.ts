@@ -20,9 +20,13 @@ export class UserService {
     return this.http.post(this.apiUrl+"login", user)
   }
 
-
   setToken(token:string) {
     this.token = token
     localStorage.setItem('token', token)
   }
+
+  register(user: any): Observable<any> {
+    return this.http.post(this.apiUrl+"register", user)
+  }
+
 }
