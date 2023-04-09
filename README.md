@@ -1,6 +1,14 @@
-# RestaurantAngular
+# Angular-starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+This is a basic starter project with Authentification.
+
+Includes login, register and provate dashboard.
+
+## Demo
+
+See the live demo: http://jairodev.s3-website.eu-west-3.amazonaws.com/angular-starter/
+
+Angular version 14.2.3.
 
 ## Development server
 

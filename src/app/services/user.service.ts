@@ -10,7 +10,7 @@ import { catchError } from "rxjs/operators";
 })
 export class UserService {
 
-  private apiUrl = "https://reqres.in/api/"
+  private apiUrl = "http://127.0.0.1:8000/api/"
 
   private token?:string;
 
