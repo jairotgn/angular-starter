@@ -16,6 +16,10 @@
         <input ngModel type="password" name="password" class="form-control" required pattern=".{3,}">
       </div>
       <input type="submit" class="btn btn-primary w-100" value="REGISTER">
+      <div *ngIf="error" class="alert alert-danger mt-2">
+        {{error}}
+      </div>
+      <p class="mt-5">Already a member? <a routerLink="/public/login">Login now</a></p>
     </form>
   </div>
 </div>

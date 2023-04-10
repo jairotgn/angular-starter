@@ -1,0 +1,32 @@
+<div class="mainbg py-5">
+  <div class="container mt-5">
+    <h1 class="my-3 bg-white">Users panel</h1>
+
+    <button routerLink="/register" class="btn btn-primary my-4"> New user </button>
+
+    <table class="table bg-white table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Created</th>
+          <th>Actions</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+          <td>{{user.created_at | date:'Y-m-d H:s'}}</td>
+          <td><button class="btn btn-primary">Edit</button></td>
+          <td><button class="btn btn-primary">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

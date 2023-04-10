@@ -3,6 +3,9 @@
   <div class="container pt-5 d-flex justify-content-center">
     <form #formlogin="ngForm" class="bg-white p-4 formlogin needs-validation" (ngSubmit)="onSubmit(formlogin)" novalidate >
       <h1 class="mb-5">Login page</h1>
+      <div *ngIf="registerOk" class="alert alert-success mt-2">
+        Registration successful, please login
+      </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email address</label>
         <input ngModel type="email" name="email" class="form-control" required >
@@ -17,7 +20,7 @@
       <p *ngIf="error" class="alert alert-danger mt-3" role="alert">
         Invalid login credentials
       </p>
-      <p class="mt-5">Not a member yet? <a routerLink="/register">Register now</a></p>
+      <p class="mt-5">Not a member yet? <a routerLink="/public/register">Register now</a></p>
     </form>
   </div>
 </div>
