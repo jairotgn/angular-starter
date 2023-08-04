@@ -1,0 +1,12 @@
+footer {
+  background: #013832;
+}
+.container {
+  max-width: 900px;
+}
+.nav {
+  background: #008374;
+}
+.nav a {
+  color: #fff;
+}
