@@ -8,7 +8,12 @@ Public content pages: home, contact, blog, login.
 
 Private administrator panel: manage users, manage blogs.
 
+## Demostration
+
+View the demo site: `https://project1.reformitas.es`
+
 ## Version 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server

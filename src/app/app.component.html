@@ -8,13 +8,13 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="/contact">Contact</a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="isLoged" class="nav-item">
     <a class="nav-link" routerLink="/admin/blogs">Manage Blogs</a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="isLoged" class="nav-item">
     <a class="nav-link" routerLink="/admin/users">Manage Users</a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="isLoged == false" class="nav-item">
     <a class="nav-link" routerLink="/login">Login</a>
   </li>
 </ul>

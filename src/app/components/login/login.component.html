@@ -1,19 +1,24 @@
 <div class="container">
   <div class="row justify-content-center ">
-    <div class="col-md-4 bg-body-secondary p-3 mb-5">
-      <h1>Inicio de sesión</h1>
-      <form action="/login" method="post">
+    <div class="col-md-4 bg-body-secondary p-3 mb-5 mt-5">
+      <h1>Login Form</h1>
+      <form  #loginForm="ngForm" (ngSubmit)="onSubmitLoginForm(loginForm)">
         <div class="mb-3">
-          <label for="username" class="form-label">Nombre de usuario</label>
-          <input type="text" class="form-control" id="username" name="username" required>
+          <label for="email" class="form-label">Email</label>
+          <input ngModel type="text" name="email" class="form-control" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" />
         </div>
+
         <div class="mb-3">
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" required>
+          <label for="password" class="form-label">Password</label>
+          <input ngModel type="password" name="password" class="form-control"  minlength="6" required />
         </div>
         <div class="mb-3 text-center">
-          <input type="submit" class="btn btn-primary" value="Iniciar sesión">
+          <input type="submit" class="btn btn-primary" value="Enter" style="min-width: 33%;">
         </div>
+        <div *ngIf="error" class="alert alert-danger" role="alert">
+          {{errorMessage}}
+        </div>
+        <p class="text-center">Demo credentials: <span class="fst-italic">admin@domain.com 123456</span></p>
       </form>
     </div>
   </div>
