@@ -12,14 +12,14 @@
     <a class="nav-link" routerLink="/login">Login</a>
   </li>
   <li *ngIf="isLoged" class="nav-item">
-    <a class="nav-link" routerLink="/admin">Administrator</a>
+    <a class="nav-link" routerLink="/admin">Hello {{authService.name}}</a>
   </li>
   <li *ngIf="isLoged" class="nav-item">
     <a class="nav-link" href="" (click)="logout()">Logout</a>
   </li>
 </ul>
 <router-outlet></router-outlet>
-<footer class="py-3 mt-4">
+<footer class="py-3">
   <div class="container text-center text-white">
     Project created with Angular
   </div>

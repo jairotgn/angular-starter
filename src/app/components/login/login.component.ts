@@ -40,20 +40,24 @@ export class LoginComponent implements OnInit {
   private login(loginForm: NgForm) {
     this.authService.login(loginForm.value).subscribe(
       response => {
-        // Manejar la respuesta aquí, por ejemplo, mostrar el token de autenticación
-        if (response.status == 1 && response.authToken) {
-          this.authService.setAuthToken(response.authToken)
+
+        // RESPONSE OK
+        if (response.status == 1 && response.token) {
+
+          this.authService.setAuthToken(response.token)
           this.error   = false
           this.isLoged = true
-          window.location.href = "/admin";
 
-        }else {
-          this.error        = true
-          this.errorMessage = "Incorrect email or password"
+          localStorage.setItem('name', response.name)
+          localStorage.setItem('roleId', response.roleId)
+
+          // REDIRECT BACKOFFICE
+          window.location.href = "/admin"
         }
       },
       error => {
-        this.error = true
+        this.error        = true
+        this.errorMessage = error.error.message
       }
     );
   }

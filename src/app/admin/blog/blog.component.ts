@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.css']
+  selector: 'app-blog-admin',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.css']
 })
-export class BlogsAdminComponent implements OnInit {
+export class BlogAdminComponent implements OnInit {
 
 
   public columns: string[] = ['id', 'title', 'edit'];

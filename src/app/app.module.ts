@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from "./components/login/login.component";
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 // PAGES COMPONENTS
 import { HomeComponent } from "./pages/home/home.component";
@@ -15,6 +15,7 @@ import { ContactComponent } from "./pages/contact/contact.component";
 // ADMINISTRATOR BACKOFFICE COMPONENTS
 import { HomeAdminComponent } from "./admin/home/home.component";
 import { BlogsAdminComponent } from "./admin/blogs/blogs.component";
+import { BlogAdminComponent } from "./admin/blog/blog.component";
 import { UsersAdminComponent } from "./admin/users/users.component";
 
 
@@ -26,6 +27,7 @@ import { UsersAdminComponent } from "./admin/users/users.component";
     LoginComponent,
     HomeAdminComponent,
     BlogsAdminComponent,
+    BlogAdminComponent,
     UsersAdminComponent,
   ],
 
@@ -33,10 +35,10 @@ import { UsersAdminComponent } from "./admin/users/users.component";
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatGridListModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

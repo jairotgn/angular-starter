@@ -1,3 +1,30 @@
+<div class="container mt-4">
+  <h1 class="h1admin">Manage blogs</h1>
+</div>
+
 <div class="container">
-  <h1 class="h1admin">Admin blogs</h1>
+  <mat-table [dataSource]="dataSource">
+
+    <!-- Column ID -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+    </ng-container>
+
+    <!-- Column Title -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.title }}</mat-cell>
+    </ng-container>
+
+     <!-- Column edit  -->
+     <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+      <mat-cell *matCellDef="let element"><a [routerLink]="['/admin/blog', element.id]"> Edit </a>  </mat-cell>
+    </ng-container>
+
+    <!-- Column define -->
+    <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns;"></mat-row>
+  </mat-table>
 </div>

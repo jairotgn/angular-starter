@@ -12,14 +12,14 @@ export class AppComponent {
 
   public isLoged : boolean = false;
 
-  constructor(private authService:AuthService, private router:Router) {
+  constructor(public authService:AuthService, private router:Router) {
     this.isLoged = AuthService.isLoged
   }
 
+
+
   public logout() {
    this.authService.logout()
-
    this.router.navigateByUrl('');
-
   }
 }

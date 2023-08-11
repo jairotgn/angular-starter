@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 // ADMIN COMPONENTS
 import { HomeAdminComponent } from './admin/home/home.component';
 import { BlogsAdminComponent } from './admin/blogs/blogs.component';
+import { BlogAdminComponent } from './admin/blog/blog.component';
 import { UsersAdminComponent } from './admin/users/users.component';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'admin', component: HomeAdminComponent },
   { path: 'admin/blogs', component: BlogsAdminComponent },
+  { path: 'admin/blog/:id', component: BlogAdminComponent },
   { path: 'admin/users', component: UsersAdminComponent }
 ];
 

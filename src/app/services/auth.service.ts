@@ -7,22 +7,32 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl : string = 'https://project1.reformitas.es/laravel/public/api/'
-  private authToken!:string
+  // ENDPOINT
+  // private apiUrl : string = 'https://project1.reformitas.es/laravel/public/api/'
+  private apiUrl : string = 'http://laravel-starter-api.test/api/'
 
+  // TOKEN DATA
+  private authToken!:string
   public static isLoged:boolean = false
 
+  // USER DATA
+  public name?:string
+  public roleId?:number
+
+
   constructor(private http: HttpClient) {
-    const token = this.getAuthToken();
-    if (token) {
-      this.authToken      = token;
+
+    // GET DATA FROM LOCAL STORAGE
+    this.authToken   = <string>localStorage.getItem('authToken')
+    this.name        = <string>localStorage.getItem('name')
+    this.roleId      = <any>localStorage.getItem('roleId')
+
+    // SET LOGED
+    if (this.authToken) {
       AuthService.isLoged = true;
     }
   }
-  // GET AUTH TOKEN FROM LOCAL STORAGE
-  getAuthToken() {
-    return localStorage.getItem('authToken')
-  }
+
 
   // SET AUTH TOKEN
   setAuthToken(token: string):void {
