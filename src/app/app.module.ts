@@ -4,13 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { LoginComponent } from "./components/login/login.component";
+import { LoginComponent } from "./auth/login/login.component";
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+
 
 // PAGES COMPONENTS
 import { HomeComponent } from "./pages/home/home.component";
 import { ContactComponent } from "./pages/contact/contact.component";
+import { BlogComponent } from "./pages/blog/blog.component";
 
 // ADMINISTRATOR BACKOFFICE COMPONENTS
 import { HomeAdminComponent } from "./admin/home/home.component";
@@ -24,6 +26,7 @@ import { UsersAdminComponent } from "./admin/users/users.component";
     AppComponent,
     HomeComponent,
     ContactComponent,
+    BlogComponent,
     LoginComponent,
     HomeAdminComponent,
     BlogsAdminComponent,
@@ -38,7 +41,8 @@ import { UsersAdminComponent } from "./admin/users/users.component";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

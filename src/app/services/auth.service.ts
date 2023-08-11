@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
 
-  // ENDPOINT
-  // private apiUrl : string = 'https://project1.reformitas.es/laravel/public/api/'
-  private apiUrl : string = 'http://laravel-starter-api.test/api/'
+export class AuthService {
 
   // TOKEN DATA
   private authToken!:string
@@ -17,32 +15,37 @@ export class AuthService {
 
   // USER DATA
   public name?:string
-  public roleId?:number
+  public roleId!:number
 
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private apiService:ApiService) {
 
     // GET DATA FROM LOCAL STORAGE
     this.authToken   = <string>localStorage.getItem('authToken')
     this.name        = <string>localStorage.getItem('name')
     this.roleId      = <any>localStorage.getItem('roleId')
 
+
     // SET LOGED
-    if (this.authToken) {
+    if (this.authToken && this.name && this.roleId) {
       AuthService.isLoged = true;
     }
   }
 
-
-  // SET AUTH TOKEN
-  setAuthToken(token: string):void {
-    AuthService.isLoged = true;
-    localStorage.setItem('authToken', token)
-  }
-
   // LOGIN API
   login(data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl+'login', data)
+    return this.http.post<any>(this.apiService.apiUrl+'login', data)
+  }
+
+  // SET AUTH TOKEN
+  afterLogin(token: string, name: string, roleId: string): boolean {
+    if (token && name && roleId) {
+      localStorage.setItem('authToken', token)
+      localStorage.setItem('name', name)
+      localStorage.setItem('roleId', roleId)
+      AuthService.isLoged = true;
+      return true
+    }
+    return false
   }
 
   // LOGOUT FUNCTION
@@ -50,9 +53,5 @@ export class AuthService {
     this.authToken      = '';
     AuthService.isLoged = false;
     localStorage.removeItem('authToken');
-  }
-
-  post(endPoint:string, data: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl+endPoint, data)
   }
 }

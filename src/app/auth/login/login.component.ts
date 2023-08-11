@@ -43,13 +43,8 @@ export class LoginComponent implements OnInit {
 
         // RESPONSE OK
         if (response.status == 1 && response.token) {
-
-          this.authService.setAuthToken(response.token)
+          this.authService.afterLogin(response.token, response.name, response.roleId)
           this.error   = false
-          this.isLoged = true
-
-          localStorage.setItem('name', response.name)
-          localStorage.setItem('roleId', response.roleId)
 
           // REDIRECT BACKOFFICE
           window.location.href = "/admin"

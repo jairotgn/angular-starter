@@ -3,3 +3,16 @@
     <h1>Blog page</h1>
   </div>
 </header>
+
+
+<div class="container">
+  <div *ngFor="let blog of blogs;" class="row mb-5">
+    <h2>{{blog.title}}</h2>
+    <div class="col-md-3">
+       <img src="./assets/default-img.jpg" class="img-fluid">
+    </div>
+    <div class="col-md-9">
+      {{blog.article}}
+    </div>
+  </div>
+</div>
