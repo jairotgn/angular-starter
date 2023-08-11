@@ -8,9 +8,15 @@ Public content pages: home, contact, blog, login.
 
 Private administrator panel: manage users, manage blogs.
 
+## How to create new component?
+
+1. Create component: `ng generate component hero-detail` 
+2. Add declaration: `src/app/app.module.ts`
+3. Add the route `app-routing.module.ts`
+
 ## Demostration
 
-View the demo site: `https://project1.reformitas.es`
+View the demo site: [https://project1.reformitas.es](https://project1.reformitas.es)
 
 ## Version 
 

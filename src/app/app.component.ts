@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,14 @@ export class AppComponent {
 
   public isLoged : boolean = false;
 
-  constructor(private authService:AuthService) {
-
+  constructor(private authService:AuthService, private router:Router) {
     this.isLoged = AuthService.isLoged
+  }
+
+  public logout() {
+   this.authService.logout()
+
+   this.router.navigateByUrl('');
 
   }
 }

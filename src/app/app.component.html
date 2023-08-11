@@ -8,14 +8,14 @@
   <li class="nav-item">
     <a class="nav-link" routerLink="/contact">Contact</a>
   </li>
-  <li *ngIf="isLoged" class="nav-item">
-    <a class="nav-link" routerLink="/admin/blogs">Manage Blogs</a>
-  </li>
-  <li *ngIf="isLoged" class="nav-item">
-    <a class="nav-link" routerLink="/admin/users">Manage Users</a>
-  </li>
   <li *ngIf="isLoged == false" class="nav-item">
     <a class="nav-link" routerLink="/login">Login</a>
+  </li>
+  <li *ngIf="isLoged" class="nav-item">
+    <a class="nav-link" routerLink="/admin">Administrator</a>
+  </li>
+  <li *ngIf="isLoged" class="nav-item">
+    <a class="nav-link" href="" (click)="logout()">Logout</a>
   </li>
 </ul>
 <router-outlet></router-outlet>

@@ -35,6 +35,13 @@ export class AuthService {
     return this.http.post<any>(this.apiUrl+'login', data)
   }
 
+  // LOGOUT FUNCTION
+  logout():void {
+    this.authToken      = '';
+    AuthService.isLoged = false;
+    localStorage.removeItem('authToken');
+  }
+
   post(endPoint:string, data: any): Observable<any> {
     return this.http.post<any>(this.apiUrl+endPoint, data)
   }
