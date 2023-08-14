@@ -16,7 +16,7 @@ Private administrator panel: manage users, manage blogs.
 
 ## Demostration
 
-View the demo site: [https://project1.reformitas.es](https://project1.reformitas.es)
+View the demo site: [https://jairotgn.github.io/angular-starter/](https://jairotgn.github.io/angular-starter/)
 
 ## Version 
 
