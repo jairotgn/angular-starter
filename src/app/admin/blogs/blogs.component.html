@@ -1,5 +1,8 @@
 <div class="container mt-4">
   <h1 class="h1admin">Manage blogs</h1>
+
+
+  <a class="btn btn-primary" routerLink="/admin/blog/0"> New Blog</a>
 </div>
 
 <div class="container">
@@ -17,10 +20,19 @@
       <mat-cell *matCellDef="let element">{{ element.title }}</mat-cell>
     </ng-container>
 
-     <!-- Column edit  -->
-     <ng-container matColumnDef="edit">
+    <!-- Column Title -->
+    <ng-container matColumnDef="created_at">
+      <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.created_at | date: 'yyyy/MM/dd' }}</mat-cell>
+    </ng-container>
+
+
+    <!-- Column edit  -->
+    <ng-container matColumnDef="edit">
       <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
-      <mat-cell *matCellDef="let element"><a [routerLink]="['/admin/blog', element.id]"> Edit </a>  </mat-cell>
+      <mat-cell *matCellDef="let element">
+        <a [routerLink]="['/admin/blog', element.id]"><mat-icon>edit</mat-icon></a>
+      </mat-cell>
     </ng-container>
 
     <!-- Column define -->

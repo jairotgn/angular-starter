@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,21 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class BlogsAdminComponent implements OnInit {
 
 
-  public columns: string[] = ['id', 'title', 'edit'];
+  public columns: string[] = ['id', 'title', 'created_at' ,'edit'];
+  public blogs?: any[];
+
+  public dataSource: any = [];
 
 
-  public dataSource: any = [
-    { id: 1, title: 'Fisrt blog ' },
-    { id: 2, title: 'Second Second blog' },
-    { id: 3, title: '3 blog' },
-  ];
-
-
-  constructor() { }
+  constructor(private apiService : ApiService) { }
 
   ngOnInit() {
-
-
+    this.apiService.get('blog').subscribe(
+      response => {
+        this.dataSource = response
+      }
+    );
   }
 
 }

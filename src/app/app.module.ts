@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from "./auth/login/login.component";
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatIconModule } from '@angular/material/icon';
 
 // PAGES COMPONENTS
 import { HomeComponent } from "./pages/home/home.component";
@@ -42,6 +42,7 @@ import { UsersAdminComponent } from "./admin/users/users.component";
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,
+    MatIconModule
 
   ],
   providers: [],

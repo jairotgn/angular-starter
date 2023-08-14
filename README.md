@@ -8,15 +8,15 @@ Public content pages: home, contact, blog, login.
 
 Private administrator panel: manage users, manage blogs.
 
+## Demostration
+
+View the demo site: [https://jairotgn.github.io/angular-starter/](https://jairotgn.github.io/angular-starter/)
+
 ## How to create new component?
 
 1. Create component: `ng generate component hero-detail` 
 2. Add declaration: `src/app/app.module.ts`
 3. Add the route `app-routing.module.ts`
-
-## Demostration
-
-View the demo site: [https://jairotgn.github.io/angular-starter/](https://jairotgn.github.io/angular-starter/)
 
 ## Version 
 

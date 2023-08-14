@@ -1,25 +1,41 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-blog-admin',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
+
 export class BlogAdminComponent implements OnInit {
 
-  public columns: string[] = ['id', 'title', 'edit'];
+  public id?:number;
+  public blog?:any;
 
-  public dataSource: any = [
-    { id: 1, title: 'Fisrt blog ' },
-    { id: 2, title: 'Second Second blog' },
-    { id: 3, title: '3 blog' },
-  ];
-
-  constructor() { }
+  constructor(private apiService : ApiService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
+    this.id = <any>this.activatedRoute.snapshot.paramMap.get('id')
 
+    if (this.id) {
+      this.apiService.get('blog/'+this.id).subscribe(
+        response => {
+          this.blog = response
+        }
+      );
+    }
   }
 
+  save() {
+    this.apiService.post('blog/'+this.id, this.blog).subscribe(
+      response => {
+
+        if (response.status == 1) {
+          alert('Saved')
+        }
+      }
+    );
+  }
 }
